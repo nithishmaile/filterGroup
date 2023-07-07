@@ -39,16 +39,16 @@ const FiltersGroup = props => {
   const renderRatingList = () => {
     const {ratingsList} = props
 
-    return ratingsList.map(eachRating => {
+    return ratingsList.map(rating => {
       const {activeRatingId, changeRating} = props
-      const onClickRating = () => changeRating(eachRating.ratingId)
-      const isActive = activeRatingId === eachRating.ratingId
+      const onClickRating = () => changeRating(rating.ratingId)
+      const isActive = activeRatingId === rating.ratingId
       const activeRating = isActive ? `active-rating` : `up-paragraph`
       return (
         <div className="star-rating-container">
           <img
-            src={eachRating.imageUrl}
-            alt={eachRating.ratingId}
+            src={rating.imageUrl}
+            alt={`rating  ${rating.ratingId}`}
             className="rating-image"
             onClick={onClickRating}
           />
